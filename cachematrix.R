@@ -33,9 +33,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## yet been calculated, it solves for the inverse (getting the matrix from the parameter passed) and stores it in the
 ## CacheMatrix object.  It then returns the inverse obtained or newly computed.
 
-
 cacheSolve <- function(x, ...) {
-    if (is.na(x["getobject"]) | !identical(x["getobject"],"CacheMatrix")) {
+    if (is.na(x["getobject"]) | !identical(x["getobject"][[1]],"CacheMatrix")) {
         message("ERROR: Object is not a CacheMatrix")
         return(NA)
     } 
